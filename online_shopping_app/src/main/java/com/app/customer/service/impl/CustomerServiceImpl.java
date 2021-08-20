@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
 		List<Product> productList1=null;
 		if(productCatagory.matches("[a-zA-Z]{2,10}")) {
 			//code here to DAO
-			productList1=customerdao.getProductsByProductName(productCatagory);
+			productList1=customerdao.getProductsByProductCatagory(productCatagory);
 		}else {
 			throw new BusinessException("Invalid team name : "+productCatagory);
 		}

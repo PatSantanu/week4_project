@@ -112,10 +112,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 			if(productList1.size()==0) {
 				throw new BusinessException("No Products available for product "+productCatagory);
 			}
-		} catch (ClassNotFoundException | SQLException e) {
+			} catch (ClassNotFoundException | SQLException e) {
 			log.error(e);
 			throw new BusinessException("Internal error occured contact sysadmin");
-		}
+			}
 			
 			
 		

@@ -22,9 +22,11 @@ public class Main {
 		CustomerService customerservice=new CustomerServiceImpl();
 		Customer customer=null;
 		Product product=null;
-		log.info("    ============================");
-		log.info("****||welcome to SHOPPING SPOT||****");
-		log.info("    ============================");
+		log.info("    ============================    ");
+		
+		log.info("****| WELCOME TO SHOPPING SPOT |****");
+		
+		log.info("    ============================    ");
 		int ch=0;
 		do {
 		log.info("\n*****MAIN MENU******");
@@ -63,10 +65,13 @@ public class Main {
 						log.info("Welcome "+email+" to SHOPPING SPOT");
 						do {
 						log.info("1)Search Products");
-						log.info("2)View Order");
-	                    log.info("3)to logout");
+						log.info("2)Add Product to Cart");
+						log.info("3)View Cart");
+						log.info("4)Place an order ");
+	                    log.info("5)View Order ");
+	                    log.info("6)to logout");
 	                    
-	                    log.info("Enter Your Choice(1-3)");
+	                    log.info("Enter Your Choice(1-6)");
 	                    try {
 	            			option=Integer.parseInt(scanner.nextLine());
 	            			}catch(NumberFormatException e) {
@@ -80,10 +85,11 @@ public class Main {
 	                    	do{
 	                    		log.info("1)Search By Produt Name");
 	                    		log.info("2)Search By Prodcut Catagory");
-	                    		log.info("More options");
-	                    		log.info("3)View Cart");
 	                    		
-	                    		log.info("Enter Your Choice(1-3):");
+	        
+	                    		
+	                    		
+	                    		log.info("Enter Your Choice(1-2):");
 	                    		try {
 	                    			option2=Integer.parseInt(scanner.nextLine());
 	                    			}catch(NumberFormatException e) {
@@ -99,12 +105,12 @@ public class Main {
 	        							List<Product> productList=customerservice.getProductsByProductName(productName);
 	        							if(productList!=null && productList.size()>0) {
 	        								log.info("Total there are "+productList.size()+" number of products available for the product "+productName.toUpperCase()+" printing the products");
-//	        								for(Product i:productList) {
-//	        									log.info(product);
-//	        								}
-	        								for(int i=0;i<productList.size();i++){
-	        								    System.out.println(productList.get(i));
-	        								} 
+	        								for(Product i:productList) {
+	        									log.info(i);
+	        								}
+//	        								for(int i=0;i<productList.size();i++){
+//	        								    System.out.println(productList.get(i));
+//	        								} 
 	        							}
 	        						} catch (BusinessException e) {
 	        							log.warn(e.getMessage());
@@ -130,12 +136,12 @@ public class Main {
         							List<Product> productList1=customerservice.getProductsByProductCatagory(productCatagory);
         							if(productList1!=null && productList1.size()>0) {
         								log.info("Total there are "+productList1.size()+" number of products available for the product "+productCatagory.toUpperCase()+" printing the products");
-//        								//for(Product i:productList1) {
-//        									//log.info(product);
-//        								}
-        								for(int j=0;j<productList1.size();j++){
-        								    System.out.println(productList1.get(j));
-        								} 
+        								  for(Product i:productList1) {
+        									 log.info(i);
+        								}
+//        								for(int j=0;j<productList1.size();j++){
+//        								    System.out.println(productList1.get(j));
+//        								} 
         							}
         						} catch (BusinessException e) {
         							log.warn(e.getMessage());
@@ -145,45 +151,46 @@ public class Main {
                     			
 	    	        			
 		    						break;
-	                    		case 3:log.info("Under Construction");
-	    	        			
-		    					break;
+	                    
 	                    		default:
-	                				log.warn("Invalid choice....Choice should be only number betwwen 1-3 only!!!");
+	                				log.warn("Invalid choice....Choice should be only number betwwen 1-2 only!!!");
 	                				break;
 	                    
 	                    		}
-	                    	}while(option2!=3);
+	                    	}while(option2!=2);
 	                    	
 	                    	
 	                    	
 	                    	
 	                    	
 	    					break;
+	    					
+	    					
 	                    
 	                    case 2:log.info("Under Construction");
 	        			
 	    					break;
+	                    case 3:log.info("Under Construction");
+	        			
+    					break;
+	                    case 4:log.info("Under Construction");
+	        			
+    					break;
+	                    case 5:log.info("Under Construction");
+	        			
+    					break;
 	    					
-	                    case 3:log.info("You Are Logged Out From SHOPPING SPOT");
+	    					
+	                    case 6:log.info("You Are Logged Out From SHOPPING SPOT");
 	        			
 	    					break;
 	    					
 	                    default:
-	        				log.warn("Invalid choice....Choice should be only number betwwen 1-3 only!!!");
+	        				log.warn("Invalid choice....Choice should be only number betwwen 1-6 only!!!");
 	        				break;
 	                    }
-	                    
-	                    
-	                    
-	                    
-						}while(option!=3);
-						
-						
-						
-						
-			
-						
+						}while(option!=6);
+					
 					}
 					
 				}catch(BusinessException e) {
